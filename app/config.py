@@ -1,3 +1,5 @@
+import os
+
 class DevelopmentConfig:
     DEBUG = True
     SQLALCHEMY_DATABASE_URI  = 'mysql+mysqlconnector://root:Hillzz%4069@localhost/library_db'
@@ -10,7 +12,5 @@ class TestingConfig:
     CACHE_TYPE = 'SimpleCache'
 
 class ProductionConfig:
-    pass
-
-
-
+    SQLALCHEMY_DATABASE_URI= os.environ.get('SQLALCHEMY_DATABASE_URI')
+    CATCHE_TYPE = "SimpleCache"
