@@ -4,9 +4,9 @@ info:
   description: "API to manage a Library system"
   version: "1.0.0"
 
-host: "127.0.0.1:5000"
+host: "https://library-erd-2.onrender.com"
 schemes:
-  - "http"
+  - "https"
 
 consumes:
   - "application/json"
