@@ -4,7 +4,7 @@ info:
   description: "API to manage a Library system"
   version: "1.0.0"
 
-host: "https://library-erd-2.onrender.com"
+host: "library-erd-2.onrender.com"
 schemes:
   - "https"
 
@@ -85,7 +85,7 @@ paths:
       tags:
         - Members
       summary: "Endpoint to update an existing member."
-      description: "Endpoint to update an existing member, this token authenticated route, and the user must be logged in to update their account."
+      description: "This token-authenticated route requires the user to be logged in."
       security:
         - bearerAuth: []
       parameters:
@@ -108,13 +108,13 @@ paths:
               DOB: "1900-01-01"
               password: "newpassword123"
 
-     delete:
+    delete:
       tags:
         - Members
-      summary: "Enpoint to delete a member"
-      description: "Endpoint to delete a member. Requires token authentication, member must be logged in to delete their account"
+      summary: "Endpoint to delete a member"
+      description: "Requires token authentication; member must be logged in to delete their account."
       security:
-       - bearerAuth: []
+        - bearerAuth: []
       responses:
         200:
           description: "Successfully Deleted member"           
@@ -194,7 +194,7 @@ definitions:
         password:
           type: "string"
 
-    UpdateMemberPayload:
+  UpdateMemberPayload:
     type: "object"
     properties:
       name:
@@ -206,13 +206,11 @@ definitions:
         format: "date"
       password:
         type: "string"
-      
     required:
       - name
       - email
       - DOB
       - password
-
 
   UpdateMemberResponse:
     type: "object"
@@ -228,10 +226,8 @@ definitions:
       password:
         type: "string"    
 
-
-  DeleteMenberResponse:
+  DeleteMemberResponse:
     type: "object"
     properties:
       message:
         type: "string"
-            
